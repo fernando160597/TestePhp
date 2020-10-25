@@ -1,8 +1,10 @@
 <?php
 
-class Dbh {
+class Dbh
+{
 
-    protected function connect(){
+    protected function connect()
+    {
         $dbh = new PDO('mysql:host=localhost;dbname=Tito', "root", "");
         return $dbh;
     }
