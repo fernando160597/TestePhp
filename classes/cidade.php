@@ -27,4 +27,17 @@ class Cidade extends Dbh
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$cidade]);
     }
+
+    public function getCidades(){
+
+        $sql = "SELECT * FROM Cidade";
+        $stmt = $this->connect()->query($sql);
+
+        echo "<h2>CIDADES</h2>";
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            echo $row["Nome"]."</br>";
+        }
+
+
+    }
 }
