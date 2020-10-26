@@ -4,29 +4,27 @@ require_once('dbh.php');
 class Cidade extends Dbh
 {
 
-    public function getCidades()
+    public function comboBoxCidades()
     {
 
         $sql = "SELECT*FROM Cidade";
         $stmt = $this->connect()->query($sql);
 
 
-        echo '<select name="hey">'; // Open your drop down box
-
-        // Loop through the query results, outputing the options one by one
+        echo '<select name="IdCidade">'; 
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             echo '<option value="' . $row['Id'] . '">' . $row['Nome'] . '</option>';
         }
 
-        echo '</select>'; // Close your drop down box
+        echo '</select>'; 
 
 
     }
 
-    public function insertUser($nome, $idade, $data)
+    public function insereCidade($cidade)
     {
-        $sql = "INSERT INTO Pessoa(Nome,Idade,DataNascimento) VALUES (?,?,?)";
+        $sql = "INSERT INTO Cidade(Nome) VALUES (?)";
         $stmt = $this->connect()->prepare($sql);
-        $stmt->execute([$nome, $idade, $data]);
+        $stmt->execute([$cidade]);
     }
 }
