@@ -15,7 +15,7 @@ class Documento extends Dbh
         $stmt = $this->connect()->query($sql);
 
         header("Content-Type: text/plain");
-        header('Content-Disposition: attachement; filename="jinujawad.txt"');
+        header('Content-Disposition: attachement; filename="relatorio.txt"');
 
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
