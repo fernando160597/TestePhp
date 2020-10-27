@@ -7,7 +7,7 @@ ob_start();
 
 <form method="post">
     Nome : <input type="text" name="Nome"></br></br>
-    Data de Nascimento : <input type="date" name="DataInicial" > Até <input type="date" name="DataFinal" ></br></br>
+    Data de Nascimento : <input type="date" name="DataInicial" required > Até <input type="date" name="DataFinal" required ></br></br>
     <label> Cidade :
         <?php $result = new Cidade();
         $result->comboBoxCidades(); ?>
