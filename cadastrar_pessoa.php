@@ -10,7 +10,7 @@ require_once('classes/cidade.php')
     <label> Cidade :
         <?php $result = new Cidade();
         $result->comboBoxCidades(); ?>
-        <input type="submit" name="submit" value="Cadastrar"></br>
+        <input type="submit" name="submit" value="Cadastrar" required></br>
         <?php
         if (isset($_POST['submit'])) {
             $teste = new Pessoa();

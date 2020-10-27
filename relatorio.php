@@ -27,12 +27,20 @@ ob_start();
         }
         if (isset($_POST['gerarExcel'])) {
             ob_get_clean(); // limpa os dados anteriores
+            $nome = $_POST['Nome'];
+            $dataInicial = $_POST['DataInicial'];
+            $dataFinal = $_POST['DataFinal'];
+            $cidadeId = $_POST['IdCidade'];
             $func = new Documento();
-            $func->gerarTxt($nome,$dataInicial,$dataFinal,$cidadeId);
+            $func->gerarExcel($nome, $dataInicial, $dataFinal, $cidadeId);
         }
         if (isset($_POST['gerarPdf'])) {
             ob_get_clean(); // limpa os dados anteriores
+            $nome = $_POST['Nome'];
+            $dataInicial = $_POST['DataInicial'];
+            $dataFinal = $_POST['DataFinal'];
+            $cidadeId = $_POST['IdCidade'];
             $func = new Documento();
-            $func->gerarTxt($nome,$dataInicial,$dataFinal,$cidadeId);
+            $func->gerarPdf($nome,$dataInicial,$dataFinal,$cidadeId);
         }
         ?>

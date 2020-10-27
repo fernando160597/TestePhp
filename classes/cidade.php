@@ -12,6 +12,7 @@ class Cidade extends Dbh
 
 
         echo '<select name="IdCidade">'; 
+        echo '<option value = 0></option>';
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             echo '<option value="' . $row['Id'] . '">' . $row['Nome'] . '</option>';
         }
